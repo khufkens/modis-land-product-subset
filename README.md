@@ -61,5 +61,5 @@ nineth and tenth parameter are the start and enddate of the query
 
 ## Requirements
 
-[SOAP lite for perl libraries](http://www.soaplite.com/) should be installed
+[SOAP lite for perl](http://www.soaplite.com/) should be installed
 
