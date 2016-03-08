@@ -6,11 +6,7 @@ Code contributions have been made by Stef Lhermitte (stef.lhermitte@knmi.nl) to 
 
 ## Installation
 
-clone the project to your home computer using the following command (with git installed)
-
-	git clone https://khufkens@bitbucket.org/khufkens/modis-land-product-subset.git
-
-alternatively, download the project using [this link](https://bitbucket.org/khufkens/modis-land-product-subset.git/get/master.zip).
+Download and unzip the project in a local directory.
 
 ## Use
 
