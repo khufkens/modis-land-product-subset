@@ -171,7 +171,7 @@ if ($numArgs == 1){
 	}else{  # else check for the available bands of a specific product
 
 		$products= SOAP::Lite
-	    	-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+	    	-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 	    	-> xmlschema('http://www.w3.org/2001/XMLSchema')
 	    	-> getproducts();
 	
