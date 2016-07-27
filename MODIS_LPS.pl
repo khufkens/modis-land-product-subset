@@ -153,7 +153,7 @@ if ($numArgs == 1){
 	if ($ARGV[0] eq 'list' ){ # if argument is 'list' list the available products
 
 		$params= SOAP::Lite
-	    	-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+	    	-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 	    	-> xmlschema('http://www.w3.org/2001/XMLSchema')
 	    	-> getproducts();
 	
@@ -181,7 +181,7 @@ if ($numArgs == 1){
 				print "\n";	
 	
 				$bands= SOAP::Lite
-	    			-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+	    			-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 	    			-> xmlschema('http://www.w3.org/2001/XMLSchema')
 	    			-> getbands("$ARGV[0]");
 	
@@ -218,7 +218,7 @@ if ($numArgs == 1){
 if ($numArgs == 3){ 
 
 	$products= SOAP::Lite
-    	-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+    	-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
     	-> xmlschema('http://www.w3.org/2001/XMLSchema')
     	-> getproducts();
 	
@@ -228,7 +228,7 @@ if ($numArgs == 3){
 		print "\n";	
 
 		$dates= SOAP::Lite
-   			-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+   			-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
    			-> xmlschema('http://www.w3.org/2001/XMLSchema')
    			-> getdates($ARGV[1], $ARGV[2],"$ARGV[0]");
 
@@ -261,12 +261,12 @@ if ($numArgs == 3){
 if ($numArgs == 6){
 
 		$products= SOAP::Lite
-	    	-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+	    	-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 	    	-> xmlschema('http://www.w3.org/2001/XMLSchema')
 	    	-> getproducts();
 	
 		$bands= SOAP::Lite
-	   		-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+	   		-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 	   		-> xmlschema('http://www.w3.org/2001/XMLSchema')
 	   		-> getbands("$ARGV[0]");
 	
@@ -301,7 +301,7 @@ if ($numArgs == 6){
 				
 				# get dates for the specific coordinats
 				$dates= SOAP::Lite
-					-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+					-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 					-> xmlschema('http://www.w3.org/2001/XMLSchema')
 					-> getdates($lat,$long,$ARGV[0]);				
 				
@@ -344,7 +344,7 @@ if ($numArgs == 6){
 					if($dummy == 0){ # if header is not written, write
 						# extracting DAAC data with SOAP api
 						$headerdata= SOAP::Lite
-		    				-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+		    				-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 		    				-> xmlschema('http://www.w3.org/2001/XMLSchema')
 		    				#-> on_fault(sub { my($soap, $res) = @_; die ref $res ? $res->faultstring : $soap->transport->status, "\n";})
 						-> getsubset($lat,$long,"$ARGV[0]","$ARGV[1]","$startdate","$enddate","$ARGV[2]","$ARGV[3]");
@@ -400,7 +400,7 @@ if ($numArgs == 6){
 					
 					# extracting DAAC data with SOAP api
 					$subsetdata= SOAP::Lite
-	    				-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+	    				-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 	    				-> xmlschema('http://www.w3.org/2001/XMLSchema')
 	    				#-> on_fault(sub { my($soap, $res) = @_; die ref $res ? $res->faultstring : $soap->transport->status, "\n";})
 					-> getsubset($lat,$long,"$ARGV[0]","$ARGV[1]","$startdate","$enddate","$ARGV[2]","$ARGV[3]");
@@ -474,19 +474,19 @@ if ($numArgs == 6){
 if ($numArgs == 10){
 	
 	$products= SOAP::Lite
-	   	-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+	   	-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 	   	-> xmlschema('http://www.w3.org/2001/XMLSchema')
 	   	-> getproducts();
 	
 	$bands= SOAP::Lite
-		-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+		-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 	   	-> xmlschema('http://www.w3.org/2001/XMLSchema')
 	   	-> getbands("$ARGV[1]");
 	   	
 	if (looks_like_number($ARGV[3]) > 0 && looks_like_number($ARGV[4]) > 0 ){   	
 	   	
 	 	$dates= SOAP::Lite
-			-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+			-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 			-> xmlschema('http://www.w3.org/2001/XMLSchema')
 			-> getdates($ARGV[3],$ARGV[4],$ARGV[1]);
 		$nrdates = @{$dates};
@@ -573,7 +573,7 @@ if ($numArgs == 10){
 			if($dummy == 0){ # if header is not written, write
 			
 				$headerdata= SOAP::Lite
-					-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+					-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 					-> xmlschema('http://www.w3.org/2001/XMLSchema')
 					-> getsubset($ARGV[3],$ARGV[4],"$ARGV[1]","$ARGV[2]","$startdate","$enddate","$ARGV[5]","$ARGV[6]");
 		
@@ -628,7 +628,7 @@ if ($numArgs == 10){
 		
 			# extracting DAAC data with SOAP api
 			$subsetdata= SOAP::Lite
-				-> service('http://daac.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
+				-> service('http://daacmodis.ornl.gov/cgi-bin/MODIS/GLBVIZ_1_Glb_subset/MODIS_webservice.wsdl')
 				-> xmlschema('http://www.w3.org/2001/XMLSchema')
 				#-> on_fault(sub { my($soap, $res) = @_; die ref $res ? $res->faultstring : $soap->transport->status, "\n";})
 				-> getsubset($ARGV[3],$ARGV[4],"$ARGV[1]","$ARGV[2]","$startdate","$enddate","$ARGV[5]","$ARGV[6]");
