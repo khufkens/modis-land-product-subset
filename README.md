@@ -14,19 +14,19 @@ This perl script has five functions:
 
 1) query the available products with argument 'list'
 
-	./DAAC-LPS.pl list
+	./MODIS-LPS.pl list
 
 2) query the available bands of a product (e.g. MCD12Q1)
 
-	./DAAC-LPS.pl MCD12Q1
+	./MODIS-LPS.pl MCD12Q1
 
 3) query the available dates of a product at a location (latitude, longitude)
 
-	./DAAC-LPS.pl MCD12Q1 40 -110
+	./MODIS-LPS.pl MCD12Q1 40 -110
 
 4) extract subsets of a product and band for a list of locations and this for all available dates.
 
-	./DAAC-LPS.pl MCD12Q1 Land_Cover_Type_1 1 1 T input.csv
+	./MODIS-LPS.pl MCD12Q1 Land_Cover_Type_1 1 1 T input.csv
 
 first parameter is the product name (see 1.)
 second parameter is the band name (see 2.)
@@ -41,7 +41,7 @@ The file format of the csv file is location name, latitude, longitude with no he
 
 5) extract subsets of a product and band for a certain location and interval of dates
 
-	./DAAC-LPS.pl Site MCD12Q1 Land_Cover_Type_1 40 -110 1 1 A2001001 A2002001 
+	./MODIS-LPS.pl Site MCD12Q1 Land_Cover_Type_1 40 -110 1 1 A2001001 A2002001 
 
 first parameter is the site name
 second parameter is the product name (see 1.)
