@@ -38,12 +38,7 @@
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<p>clone the project to your home computer using the following command (with git installed)</p>
-
-<pre><code>git clone https://khufkens@bitbucket.org/khufkens/modis-land-product-subset.git
-</code></pre>
-
-<p>alternatively, download the project using <a href="https://bitbucket.org/khufkens/modis-land-product-subset.git/get/master.zip">this link</a>.</p>
+<p>Download and unzip the project in a local directory.</p>
 
 <h2>
 <a id="use" class="anchor" href="#use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use</h2>
@@ -52,22 +47,22 @@
 
 <p>1) query the available products with argument 'list'</p>
 
-<pre><code>./DAAC-LPS.pl list
+<pre><code>./MODIS-LPS.pl list
 </code></pre>
 
 <p>2) query the available bands of a product (e.g. MCD12Q1)</p>
 
-<pre><code>./DAAC-LPS.pl MCD12Q1
+<pre><code>./MODIS-LPS.pl MCD12Q1
 </code></pre>
 
 <p>3) query the available dates of a product at a location (latitude, longitude)</p>
 
-<pre><code>./DAAC-LPS.pl MCD12Q1 40 -110
+<pre><code>./MODIS-LPS.pl MCD12Q1 40 -110
 </code></pre>
 
 <p>4) extract subsets of a product and band for a list of locations and this for all available dates.</p>
 
-<pre><code>./DAAC-LPS.pl MCD12Q1 Land_Cover_Type_1 1 1 T input.csv
+<pre><code>./MODIS-LPS.pl MCD12Q1 Land_Cover_Type_1 1 1 T input.csv
 </code></pre>
 
 <p>first parameter is the product name (see 1.)
@@ -83,7 +78,7 @@ sixth parameter is a csv file containing locations</p>
 
 <p>5) extract subsets of a product and band for a certain location and interval of dates</p>
 
-<pre><code>./DAAC-LPS.pl Site MCD12Q1 Land_Cover_Type_1 40 -110 1 1 A2001001 A2002001 
+<pre><code>./MODIS-LPS.pl Site MCD12Q1 Land_Cover_Type_1 40 -110 1 1 A2001001 A2002001 
 </code></pre>
 
 <p>first parameter is the site name
