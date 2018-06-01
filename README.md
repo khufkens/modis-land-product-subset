@@ -1,3 +1,6 @@
+```diff
+- DEPRECATED DUE TO CHANGES IN THE ORNL API, PLEASE USE THE MODISTOOLS R PACKAGE INSTEAD!
+```
 # ORNL DAAC MODIS Land Product Subsets - Perl Tool
 
 This is a perl client for the Oak Ridge National Laboratories (ORNL) MODIS Land Product Subsets project. It allows for the extraction of time series of several pixels around geographic locations for select MODIS products. The service makes use of the Simple Object Access Protocol (SOAP) web service provided by ORNL (see requirements below).
